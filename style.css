@@ -4,6 +4,8 @@
 body {
     margin: 0; /* Supprime les marges par défaut du navigateur pour que tout prenne toute la largeur */
     font-family: Arial, sans-serif; /* Définit la police principale du site */
+	background-color: hsl(142 24% 25%);
+	
 }
 
 /* -----------------------------
@@ -59,22 +61,50 @@ body {
    4. Titre centré
 --------------------------------*/
 .title {
-    position: absolute;          /* Permet de positionner le titre par rapport au container .hero */
-    top: 50%;                    /* Place le point central du titre à 50% de la hauteur */
-    left: 50%;                   /* Place le point central du titre à 50% de la largeur */
-    transform: translate(-50%, -50%);
-    /* Décale le titre de moitié de sa largeur et hauteur pour le centrer exactement */
-    color: white;                /* Couleur du texte */
-    font-size: 3rem;             /* Taille du texte en "rem" (relative à la taille de police du corps) */
-    z-index: 2;                  /* Met le titre devant les images (images ont z-index par défaut = auto) */
-    text-align: center;          /* Centre le texte si multi-ligne */
+    position: absolute;              /* Permet de positionner le titre par rapport au container .hero */
+    top: 50%;                        /* Place le point central du titre à 50% de la hauteur */
+    left: 50%;                       /* Place le point central du titre à 50% de la largeur */
+    transform: translate(-50%, -50%);/* Décale le titre de moitié de sa largeur et hauteur pour le centrer exactement */
+    color: black;                    /* Couleur du texte */
+    font-size: 5rem;                 /* Taille du texte en "rem" (relative à la taille de police du corps) */
+    z-index: 1;                      /* Met le titre devant les images (images ont z-index par défaut = auto) */
+    text-align: center;              /* Centre le texte si multi-ligne */
+	background-color: white;		 /* Couleur de fond */
+	padding: 5px;
+	
+	
 }
+
+p {
+  /*text-indent: 50px;/**/
+  text-align: justify;/**/
+  letter-spacing: 3px;/**/
+}
+
 
 /* -----------------------------
    5. Contenu sous le header
 --------------------------------*/
-.content {
-    padding: 40px;  /* Ajoute un espace à l’intérieur de la section pour que le texte ne touche pas les bords */
+.presentation {
+    padding: 100px;  /* Ajoute un espace à l’intérieur de la section pour que le texte ne touche pas les bords */
+	position: relative; /* Permet aux enfants (images et titre) de se positionner absolument par rapport à ce container */
+    height: 350px;      /* Hauteur du rectangle en pixels. Ajustable selon ton besoin */
+    width: 70%;        /* Largeur pleine de l’écran */
+	
+}
+
+.photo_perso {
+  float: left;
+  margin-right: 15px;
+  width: 150px;
+}
+
+.projets_academique{
+	padding: 40px;	
+}
+
+.alternance{
+	padding: 40px;	
 }
 
 .text-container {
@@ -94,4 +124,11 @@ body {
     display: inline-block;   /* Chaque lettre devient un bloc pour animation */
     opacity: 1;              /* Opacité initiale */
     transition: opacity 0.3s ease-in-out; /* Transition douce pour l'apparition/disparition */
+}
+
+.recap{
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  gap: 20px; /* espace entre les boutons */
+  margin-top: 50px;
 }
