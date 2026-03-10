@@ -1,4 +1,12 @@
 /* -----------------------------
+   0. Variables  
+----------------------------- */
+:root {
+  --marge_gauche:115px;
+  --pourcent_ecran:80%;
+}
+
+/* -----------------------------
    1. Style global du corps
 --------------------------------*/
 body {
@@ -86,10 +94,11 @@ p {
    5. Contenu sous le header
 --------------------------------*/
 .presentation {
-    padding: 100px;  /* Ajoute un espace à l’intérieur de la section pour que le texte ne touche pas les bords */
+    padding: var(--marge_gauche);     /* Ajoute un espace à l’intérieur de la section pour que le texte ne touche pas les bords */
 	position: relative; /* Permet aux enfants (images et titre) de se positionner absolument par rapport à ce container */
-    height: 350px;      /* Hauteur du rectangle en pixels. Ajustable selon ton besoin */
-    width: 70%;        /* Largeur pleine de l’écran */
+    height: auto;       /* Hauteur du rectangle en pixels. Ajustable selon ton besoin */
+    width: var(--pourcent_ecran);         /* Largeur pleine de l’écran */
+	font-size: 17px;    /* Taille du texte */ 
 	
 }
 
@@ -103,32 +112,17 @@ p {
 	padding: 40px;	
 }
 
-.alternance{
-	padding: 40px;	
+.alternance{  
+	margin-left: var(--marge_gauche);  
+	position: relative; /* Permet aux enfants (images et titre) de se positionner absolument par rapport à ce container */
+    height: auto;      /* Hauteur du rectangle en pixels. Ajustable selon ton besoin */
+     width: var(--pourcent_ecran);        /* Largeur pleine de l’écran */
+	font-size: 17px;   /* Taille du texte */
 }
 
-.text-container {
-    width: 100%;
-    height: 200px;          /* Hauteur du conteneur */
-    display: flex;           /* Pour centrer le texte */
-    justify-content: center; /* Centrage horizontal */
-    align-items: center;     /* Centrage vertical */
-    background-color: #222;  /* Couleur de fond */
-    color: white;            /* Couleur du texte */
-    font-size: 3rem;         /* Taille du texte */
-    font-family: Arial, sans-serif;
-    overflow: hidden;        /* Cache tout débordement */
-    position: relative;
-}
-.letter {
-    display: inline-block;   /* Chaque lettre devient un bloc pour animation */
-    opacity: 1;              /* Opacité initiale */
-    transition: opacity 0.3s ease-in-out; /* Transition douce pour l'apparition/disparition */
-}
-
-.recap{
+.vertical{
   display: flex;
   justify-content: center; /* centre horizontalement */
-  gap: 20px; /* espace entre les boutons */
-  margin-top: 50px;
+  gap: 40px; /* espace entre les boutons */
+
 }

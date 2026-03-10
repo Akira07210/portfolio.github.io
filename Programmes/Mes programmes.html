@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Code : Filtre Trace</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .intro {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 1.1rem;
+        }
+
+        /* Styles pour l'accordéon (JavaScript) */
+        .accordion {
+            background-color: white;
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: 0.4s;
+            border-bottom: 1px solid #eee;
+            border-radius: 4px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .active, .accordion:hover {
+            background-color: #e9ecef;
+        }
+
+        .accordion::after {
+            content: '\002B'; /* Signe Plus */
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .active::after {
+            content: "\2212"; /* Signe Moins */
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .panel p, .panel ul {
+            margin: 15px 0;
+        }
+
+        /* Grille pour les points forts et améliorations */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card.success h3 {
+            color: var(--success-color);
+        }
+
+        .card.warning h3 {
+            color: var(--warning-color);
+        }
+
+        code {
+            background-color: #f1f2f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #e84118;
+        }
+		.bp_source {
+            background-color: white;	/**/
+            color: var(--primary-color);/**/
+            cursor: pointer;/**/
+            padding: 18px;/**/
+            width: 100%;/**/
+            border: none;/**/
+            /*text-align: center;/**/
+            /*outline: none;/**/
+            font-size: 1.2rem;/**/
+            font-weight: bold;/**/
+            border-bottom: 1px solid #eee;/**/
+            border-radius: 4px;/**/
+            margin-top: 15px;/**/
+            justify-content: space-between;/**/
+            align-items: center;/**/
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Application Python Filtre UART</h1>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <strong>Objectif de l'application :</strong> Les produits que je suis amené à tester dans mon entreprise communiquent leurs actions par UART sur mon PC. 
+			Cependant lors de tests spécifiques, seul certaines informations sont intérressantes et sont utilises à savoir en temps réel. Pour cela j'ai dévelloppé ce programme qui lit sur le port USB les informations donnés par le produit et les filtre avec les paramètres renseignés.
+        </div>
+		<a href="raw.lecteur_uart.py">
+		<button class="bp_source">Code source</button>
+		<a>
+
+        <h2> 1. Architecture Globale</h2>
+        <div class="intro">
+            <p>J'utilise la bibliothèque <code>tk</code> pour créer une interface graphique avec laquel l'utilisateur va pouvoir visualiser les traces en direct et renseigner ses paramètres.
+			 Pour fluidifier le fonctionnemt de l'application, je déclenche les fontions par <code> thread</code>. Cela me permet de donner un fonctionnemt asynchrone à mon application et ne pas la faire freezer.
+        </div>
+
+        <h2>2. Découpage et Analyse des Composants</h2>
+        
+        <button class="accordion">A. Initialisation et État</button>
+        <div class="panel">
+            <p>La méthode <code>__init__</code> configure la fenêtre et initialise toutes les variables d'état. Elle appelle ensuite les méthodes de création de l'interface.</p>
+            <p><strong>Gestion Asynchrone :</strong> L'utilisation de <code>threading.Event()</code> pour <code>self.read_thread_event</code> permet de gérer l'arrêt sécurisé du thread de lecture.</p>
+        </div>
+
+        <button class="accordion">B. Interface Graphique (UI)</button>
+        <div class="panel">
+            <ul>
+                <li><strong>Barre d'état :</strong> Affiche les paramètres en cours d'utilisation (port de lecture, vitesse, activation du filtre). L'utilisation d'un <code>Canvas</code> pour avoir un retour visuel sur l'étata de lecture(led rouge ou verte).</li>
+                <li><strong>Zone de texte :</strong> Utilise <code>ScrolledText</code> pour afficher les traces voulu. <code>ScrolledText</code> est nécéssaire pour les grandes quantités de texte et permet de naviguer facilement à travers. </li>
+                <li><strong>Onglets :</strong> Les onglets dépliables ouvrent des fenêtres permettant à l'utilisateur de sélectionner ses paramètres. J'utilise pour cela la classe <code>Menu</code> de <code>tk</code></li>
+            </ul>
+        </div>
+
+        <button class="accordion">C. Lecture Asynchrone</button>
+        <div class="panel">
+            <p>Gérer des lectures série est délicat car la fonction <code>ser.readline()</code> est bloquante.<br> J'effectue donc la lecture en deux parties : </p>
+            <ul>
+                <li><strong>Threading :</strong> Déporter la lecture dans un processus séparé (<code>threading.Thread</code>) empêche l'interface de figer.</li>
+                <li><strong>Traitement :</strong> Les données sont ensuite décodées et si une erreur intervient dans le décodage, <code>errors='replace'</code> permet d'écrire l'erreur à la place des données. Les donnée sont ensuites filtrés puis affichés et écrites dans un fichier de log.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">D. Système de Filtrage et Paramètres</button>
+        <div class="panel">
+            <p><strong>Filtrage : </strong> L'option de filtrage consiste à vérifier dans chaque ligne si un mot clée est présent. Si c'est le cas alors la ligne est affichée. L'utilisateur peut renseigner plusieurs mots clée et choisir entre l'option <code>ET</code> pour vérifier tous les mots soient présent sur la ligne ou <code>OU</code> pour vérifier qu'un des mots soit présent sur la ligne. </p>
+            <p><strong>Paramètres :</strong> Dans la fenêtre paramètre, il est possible de sélectionner le port à lire ainsi que la vitesse de lecture. Pour ne perdre aucune information, toutes les traces lu sur le port sont écrites dans un fichier de log. Il est possible dans le menu déroulant paramètre de sélectionner le nom du fichier ainsi que son emplacement.</p>
+        </div>
+
+        <h2>3. Appercue en fonctionnement</h2>
+        <div class="grid-2">
+            <div class="card warning">
+                <h3>Lecture sans filtre</h3>
+				<p>Le filtre n'étant pas actif, toutes les informations lu sur le port 5 seront affichés.</p>
+				<video autoplay controls loop  width="380" height="270"">
+				  <source src="Filtre Trace 2026-03-10 14-51-25.mp4" type="video/mp4" />
+			    </video>
+            </div>
+            
+            <div class="card warning">
+                <h3>Lecture avec filtre </h3>
+				<p>Le mot rechercher est M5. Le filte me permet donc de ne voir que les trames radio des M5.</p>
+				<video autoplay controls loop width="380" height="270"">
+				  <source src="Filtre Trace 2026-03-10 14-50-39.mp4" type="video/mp4" />
+			    </video>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Script pour gérer l'accordéon
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+
+</body>
+</html>
