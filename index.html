@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Martin FAYOLLE - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles_importés.css">
+	<link rel="stylesheet" href="styles_deroulant.css">
 </head>
 
 <body>
@@ -15,8 +16,8 @@
         <h1 class="title">Martin FAYOLLE</h1> </header>
 
     <section class="vertical" style="margin-top: 50px;">
-        <button class="btn" onclick="window.location.href = 'CV_Martin_Fayolle.pdf';">Télécharger mon CV</button>
-        <button class="btn">LinkedIn</button>
+        <button class="btn" onclick="window.location.href = 'CV_Martin_Fayolle.pdf';">Télécharger mon CV</button> 
+        <button class="btn" onclick="window.location.href = 'https://www.linkedin.com/in/martin-fayolle-4673322b9/';">LinkedIn</button>
     </section>
 
     <section class="content-section">
@@ -38,10 +39,18 @@
         </div>
     </section>
 
-    <section class="vertical" style="margin: 40px 0;">
-        <button class="btn" onclick="window.location.href = 'https://www.attentive-telecare.com/myattentive/fr';">Mon entreprise</button>
-        <button class="btn" onclick="window.location.href = 'https://www.attentive-telecare.com/myattentive/fr';">Mes Tests</button>
-        <button class="btn" onclick="window.location.href = './Programmes/Lecteur_UART.html';">Mes programmes</button>
+    <section class="vertical" style="margin: 80px ;">
+        <button class="btn" onclick="window.location.href = 'https://www.attentive-telecare.com/myattentive/fr';">Mon entreprise</button> <!-- Affichage dans un pop up  -->
+        <button class="btn" onclick="window.location.href = 'https://www.attentive-telecare.com/myattentive/fr';">Mes Tests</button> <!-- Amène sur une page  -->
+        <nav class="menu">
+			<section class="categorie">
+				<h3>Mes programmes</h3>
+				<ul>
+					<li><a href="./Programmes/Lecteur_UART.html">Filtre UART</a></li>
+					<li><a class="last_a" href="">ATL</a></li>
+				</ul>
+			</section>
+	</nav>
     </section>
 
     <section class="content-section">
