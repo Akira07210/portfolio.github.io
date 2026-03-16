@@ -123,3 +123,29 @@ code {
 	font-family: monospace;
 	color: #e84118;
 }
+
+/* -----------------------------
+   7. Case pour présenter mes projets perso 
+--------------------------------*/
+
+.conteneur_Box_skill
+{
+	max-width: 80%;
+	margin: 2rem auto;
+	padding: 0 20px; 
+	display: flex;
+	justify-content: center; 
+	flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur petit écran */
+	gap: 80px; /* Réduit un peu l'écart pour éviter les débordements */
+	
+}
+
+.Box_skill{
+	/* Dimentions */
+	width: 250px;           
+    height: 300px;	
+	border-radius: 10px;
+	/* Couleurs */
+	background-color:black;
+
+}
