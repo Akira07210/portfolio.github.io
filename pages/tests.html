@@ -1,0 +1,65 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Analyse Code : Filtre Trace</title>
+	<link rel="stylesheet" href="../styles/styles_programmes.css">
+	<link rel="stylesheet" href="../styles/styles_bp_commun.css">
+</head>
+<body>
+<a href="../index.html" style ="text-decoration: none;color: inherit;">
+	<div class = "button_back_bottom" id="bp_r_b">Retour Menu</div>
+	<div class = "button_front_bottom" id="bp_r_v">
+	    <svg
+      viewBox="0 0 1024 1024"
+      height="25px"
+      width="25px"
+	  
+    >
+      <path
+        d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+        fill="#000000"
+      ></path>
+      <path
+        d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+        fill="#000000"
+      ></path>
+    </svg>
+	</div>
+	</a>
+	
+	
+<a href="https://github.com/Akira07210" >
+<img src="../images/github_image.png" alt="Logo du site" class="logo-fixe"></a>
+<header>
+	<h1>Qualification Electrique et Fonctionnelle</h1>
+</header>
+<div class="container_tests">
+	<div class="case_text_tests">
+	<img class="fit-picture" src="../images/tests_electrique.png" style= "position: relative;top=0; width: 100%;" />
+	<h2 style="border: none;">TESTS ELECTRIQUES</h2>
+	<p>Les tests éléctriques consistent à vérifier le fonctionnement du montage électrique d'un système.
+		Cela permet de s'assurer que les montages soient en capacité de réaliser leurs taches. 
+		<br><br>
+		<strong>Etude du montage : </strong>
+		<br>Il est important avant de tester un montage de comprendre son fonctionnement.Pour cela, 
+		    je commence par découper le montage pour chaque fonction électrique(créer une tension d'alim, protéger contre les inversions...).
+			Une fois cela fait, je vais étudier les caractéristiques des composants du montage grâce à leur datasheet
+			et les comparer avec les contraintes qu'ils subissent. Il est déjà possible seuelement avec cette étude de trouver des incohérences sur les choix des composants ou du montage.  
+		<br><br>
+		<strong>Vérification de son fonctionnement : </strong>
+		<br>Pour vérifier le fonctionnement de mon montage, je vais utiliser le produit, et le placer dans chacun de ses modes de fonctionnement tout en analysant
+		    les tensions et courant clée de mon montage comme par exemple les tensions d'alimentations et je les compare à celles que j'attend avec mon étude théorique.
+			<br>Et comme les composants peuvent avoir un comportement différent en fonction de la température, je repasse par ces mêmes modes de fonctionnement à des
+			températures significativement différentes. Les tensions doivent être relativement similaire.
+		<br><br>
+		<strong>Consommation du produit : </strong>
+		<br>Pendant la phase de vérification du fonctionnement du montage, je relève la consommation de courant du produit. Cela me permet de détecter rapidement lorsqu'un composant se met en fonctionnement
+		et de vérifier si cette consommation est cohérente et si son déclenchement est au bon moment. 
+		<br>En observant la consommation totale du produit, je peux également faire une estimation de la durée de vie du produit en relenvant ses consommation et en les utilisant avec un profil d'utilisateur.		
+	</p>
+	</div>
+</div>
+<script src="../js/java_animation_bp_retour.js"></script>
+</body>
+</html>

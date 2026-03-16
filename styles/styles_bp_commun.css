@@ -50,4 +50,4 @@
     justify-content: center;
 }
 
-.button_front_bottom.extantion_du_territoire{width: 292px;height: 40px;top : 14px ;left : 10px;}
+.button_front_bottom.extantion_du_territoire{width: 292px;height: 40px;top : 14px ;left : 10px; background: red ;}
