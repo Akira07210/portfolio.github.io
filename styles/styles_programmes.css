@@ -130,6 +130,7 @@ h2 {
 .card.warning h3 {
 	color: var(--warning-color);
 }
+
 code {
 	background-color: #f1f2f6;
 	padding: 2px 6px;
@@ -137,6 +138,7 @@ code {
 	font-family: monospace;
 	color: #e84118;
 }
+
 .bp_source {
 	background-color: white;	/**/
 	color: var(--primary-color);/**/

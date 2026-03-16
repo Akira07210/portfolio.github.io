@@ -20,8 +20,8 @@ const maxSteps = 6;
 
 // Textes explicatifs pour chaque étape
 const descriptions = [
-    "Étape 0 : L'ATL attend le delay fixé pour déclencher sa requête.",
-    "Étape 1 : L'ATL fait un enchainement de requête pour créer la demande d'activation du produit sur la plateforme.",
+    "Étape 0 : L'ARL attend le delay fixé pour déclencher sa requête.",
+    "Étape 1 : L'ARL fait un enchainement de requête pour créer la demande d'activation du produit sur la plateforme.",
     "Étape 2 : Le serveur réveil le produit avec sa commande à éxécuter.",
     "Étape 3 : Le produit traite la demande.",
     "Étape 4 : Les résultats sont remontés au serveur.",
@@ -38,37 +38,37 @@ function updateAnimation() {
     stepDesc.textContent = descriptions[currentStep];
 	
 	// -- ANIMATION DES FLECHES -- //
-    // 3. Étape 1 => Création Scan  
+    // 3. Étape 1 
     if (currentStep == 1) {
         creation_scan.classList.add('active');
     } else {
         creation_scan.classList.remove('active');
     }
-    // 4. Étape 2 => Réveil du LDD 
+    // 4. Étape 2 
     if (currentStep == 2) {
         reveil_LDD.classList.add('active');
     } else {
         reveil_LDD.classList.remove('active');
     }
-	// 5. Étape 3 => Scan radar 
+	// 5. Étape 3
     if (currentStep == 3) {
 		animation_scan.classList.add('active');
     } else {
         animation_scan.classList.remove('active');
 	}
-	// 6. Étape 4 => Remontée du scan  
+	// 6. Étape 4
     if (currentStep == 4) {
 		remonte_scan.classList.add('active');
     } else {
         remonte_scan.classList.remove('active');
 	}
-	// 7. Étape 5 => Récupère le scan   
+	// 7. Étape 5
     if (currentStep == 5) {
 		analyse_scan.classList.add('active');
     } else {
         analyse_scan.classList.remove('active');
 	}
-	// 8. Étape 6 => Analyse du scan   
+	// 8. Étape 6
     if (currentStep == 6) {
 		image_parametre.classList.add('active');
     } else {
