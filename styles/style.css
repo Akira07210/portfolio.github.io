@@ -2,8 +2,13 @@
    0. Variables  
 ----------------------------- */
 :root {
-  --marge_gauche: 115px;
+  --marge_gauche: 150px;
+  --marge_droite: 150px;
   --pourcent_ecran: 80%;
+  --couler_background : #101927;
+  --couleur_petit_txt:#8799b5;
+  --couleur_titre_2:white;
+  --couleur_back_box_txt:#1e2939;
 }
 
 /* -----------------------------
@@ -12,8 +17,8 @@
 body {
     margin: 0; 
     font-family: Arial, sans-serif; 
-    background-color: hsl(142 24% 25%);
-    color: white; /* Ajout d'une couleur de texte claire par défaut sur fond sombre */
+    background-color: var(--couler_background); /*hsl(142 24% 25%);*/
+    color: var(--couleur_petit_txt); /* Ajout d'une couleur de texte claire par défaut sur fond sombre */
 }
 
 /* -----------------------------
@@ -75,21 +80,30 @@ p {
   text-align: justify;
   letter-spacing: 1px; /* 3px était un peu trop large pour la lisibilité */
   line-height: 1.6; /* Améliore la lisibilité des paragraphes */
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 h2 {
+	color:var(--couleur_titre_2);
     border-bottom: 2px solid #00A97F; /* Souligne les titres de section */
     display: inline-block;
     padding-bottom: 5px;
+	padding-left: 10px;
 }
 
 /* J'ai regroupé ici les anciennes classes .presentation, .alternance, etc. */
 .content-section {
     margin-left: var(--marge_gauche);
+	margin-right: var(--marge_droite);
+	margin-top:50px;
     padding: 20px 0;
     position: relative; 
-    width: var(--pourcent_ecran);         
+    /* width: var(--pourcent_ecran);          */
     font-size: 17px;    
+	background-color:var(--couleur_back_box_txt);
+	border-radius: 8px;
+	
 }
 
 .photo_perso {
@@ -103,6 +117,7 @@ h2 {
     content: "";
     display: table;
     clear: both; /* Permet de contenir correctement l'image en float */
+	padding: 1rem;
 }
 
 /* -----------------------------
@@ -116,12 +131,12 @@ h2 {
 
 }
 
-code {
-	background-color: #f1f2f6;
+surligne {
+	background-color: #3e587c59;
 	padding: 2px 6px;
 	border-radius: 4px;
 	font-family: monospace;
-	color: #e84118;
+	color: #4ee3fa;
 }
 
 /* -----------------------------
@@ -130,22 +145,129 @@ code {
 
 .conteneur_Box_skill
 {
-	max-width: 80%;
-	margin: 2rem auto;
+	max-width: 100%;
+	margin: 2rem 0;
 	padding: 0 20px; 
 	display: flex;
 	justify-content: center; 
-	flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur petit écran */
-	gap: 80px; /* Réduit un peu l'écart pour éviter les débordements */
-	
+	gap: 80px; /* Réduit un peu l'écart pour éviter les débordements */	
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .Box_skill{
 	/* Dimentions */
-	width: 250px;           
-    height: 300px;	
+	width: 400px;           
+    height: 400px;	
 	border-radius: 10px;
 	/* Couleurs */
-	background-color:black;
+	background-color:var(--couleur_back_box_txt);
+	display:table;
+}
 
+.Box_skill li{
+  text-align: justify;
+  font-size: 15px;
+  letter-spacing: 1px; /* 3px était un peu trop large pour la lisibilité */
+  line-height: 1.6; /* Améliore la lisibilité des paragraphes */
+  padding-left: 10px;
+  padding-right: 30px;
+
+}
+
+
+.image_illustrative_dans_box_skill{
+    top: 0;
+    left: 0;
+    height: 160px;
+    width: 90%;
+	padding:4.5%;
+	object-fit: cover;
+	border-radius:25px;
+}
+
+h_box_skill{
+	color:white;
+	font-size:120%;
+	margin : 5%;
+	
+}
+
+/* -----------------------------
+   8. Styles de la fenetre pop up Solem
+--------------------------------*/
+
+.modal {
+	display: none; /* Caché par défaut */
+	position: fixed; 
+	z-index: 1000; /* Au-dessus du reste */
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgba(0,0,0,0.6); /* Fond semi-transparent */
+}
+
+.modal-content {
+	background-color: var(--couler_background);/*#fefefe*/
+	margin: 10% auto; /* Centré verticalement et horizontalement */
+	padding: 30px;
+	border: 1px solid #888;
+	width: 80%; 
+	max-width: 900px;
+	border-radius: 8px;
+	position: relative;
+	font-family: Arial, sans-serif;
+	color: var(--couleur_petit_txt);
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+	right: 25px;
+	color: #000;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.close:hover, .close:focus {
+	color: red;
+	text-decoration: none;
+}
+
+.modal-header h2 {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.modal-body-top {
+	display: flex;
+	gap: 20px;
+	align-items: flex-start;
+	margin-bottom: 20px;
+	padding-left: 20px; 
+}
+
+.modal-logo {
+	width: 150px;
+	border-radius: 10%;
+	
+}
+
+.modal-body p {
+	line-height: 1.6;
+	text-align: justify;
+}
+
+.modal-body ol {
+	line-height: 1.6;
+	margin-top: 10px;
+	padding-left: 20px;
+}
+
+.modal-body ol li {
+	margin-bottom: 15px;
+	text-align: justify;
 }

@@ -2,21 +2,23 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Martin FAYOLLE - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Martin FAYOLLE - Portfolio</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styles_importés.css">
-	<link rel="stylesheet" href="styles/styles_deroulant.css">
-	<link rel="stylesheet" href="styles/styles_bp_commun.css">
+    <link rel="stylesheet" href="styles/styles_deroulant.css">
+    <link rel="stylesheet" href="styles/styles_bp_commun.css">
 </head>
 
 <body>
-	<a href="https://github.com/Akira07210" >
-	<img src="images/github_image.png" alt="Logo du site" class="logo-fixe"></a>
+    <a href="https://github.com/Akira07210" >
+    <img src="images/github_image.png" alt="Logo du site" class="logo-fixe"></a>
 
     <header class="hero">
         <div class="img img-left"></div>
         <div class="img img-right"></div>
-        <h1 class="title">Martin FAYOLLE</h1> </header>
+        <h1 class="title">Martin FAYOLLE</h1> 
+    </header>
 
     <section class="vertical" style="margin-top: 50px;">
         <button class="btn" onclick="window.location.href = 'images/CV_Martin_Fayolle.pdf';">Télécharger mon CV</button> 
@@ -26,9 +28,9 @@
     <section class="content-section">
         <h2>Qui suis-je ?</h2>
         <div class="text-content">
-            <img class="photo_perso" src="images/image robot.avif" alt="Photo de Martin Fayolle">
+            <img class="photo_perso" src="images/image robot.avif" style = "padding-left: 20px;">
             <p>
-                Technicien supérieur en formation en Génie Électrique et Informatique Industrielle à l'IUT de Montpellier, je souhaite me spécialiser dans la sécurité informatique.
+                Technicien supérieur en formation en Génie Électrique et Informatique Industrielle à l'IUT de Montpellier, je souhaite me spécialiser dans la <surligne>sécurité informatique</surligne>.
             </p>
         </div>
     </section>
@@ -37,23 +39,25 @@
         <h2>Mon alternance</h2>
         <div class="text-content">
             <p>
-                Pendant ma formation de trois ans en BUT Génie Électrique et Informatique Industrielle, j'ai pu en effectuer deux en alternance avec l'entreprise Solem en tant que technicien tests industriels. J'ai appris à évaluer le fonctionnement d'un nouveau produit et à mettre en place des tests permettant de mettre en valeur ses fonctionnements et dysfonctionnements. Pour améliorer la qualité et la vitesse de mes tests, j'ai développé plusieurs applications Python.
+                Pendant ma formation de trois ans en BUT Génie Électrique et Informatique Industrielle, j'ai effectué deux années en alternance avec l'entreprise Solem en tant que technicien de <surligne>tests industriels</surligne>. J'ai appris à évaluer le fonctionnement d'un nouveau produit et à mettre en place des tests permettant de mettre en valeur ses fonctionnements et ses dysfonctionnements.  
+                Pour améliorer la qualité et la rapidité de mes tests, j'ai développé plusieurs applications en <surligne>Python</surligne>.
             </p>
         </div>
     </section>
 
-    <section class="vertical" style="margin-bottom: 80px; margin-top: 30px;">
-        <button class="btn" onclick="window.location.href = 'https://www.attentive-telecare.com/myattentive/fr';">Mon entreprise</button> <!-- Affichage dans un pop up  -->
-        <button class="btn" onclick="window.location.href = 'pages/tests.html';">Mes Tests et Compétences</button> <!-- Amène sur une page  -->
+    <section class="vertical" style="margin-bottom: 100px; margin-top: 30px;">
+        <button class="btn" onclick="openModal()">Mon entreprise</button> 
+        
+        <button class="btn" onclick="window.location.href = 'pages/tests.html';">Mes Tests et Compétences</button> 
         <nav class="menu">
-			<section class="categorie">
-				<h3>Mes programmes</h3>
-				<ul>
-					<li><a href="pages/Lecteur_UART.html">Filtre UART</a></li>
-					<li><a class="last_a" href="pages/ARL.html">ARL</a></li>
-				</ul>
-			</section>
-	</nav>
+            <section class="categorie" style ="margin=50px;">
+                <h3>Mes programmes</h3>
+                <ul>
+                    <li><a href="pages/Lecteur_UART.html">Filtre UART</a></li>
+                    <li><a class="last_a" href="pages/ARL.html">ARL</a></li>
+                </ul>
+            </section>
+        </nav>
     </section>
 
     <section class="content-section">
@@ -66,19 +70,119 @@
     <section class="content-section">
         <h2>Mes projets personnels</h2>
         <div class="text-content">
-            <p>J'ai en dehors de mes études et de mon alternance certains projets/challenges dans lequels je me suis lancé
-			J'ai pu grâce à ces projets apprendre à communiquer avec les <code>API</code> le laguage web, utiliser <code>Linux</code> et <code>Kali Linux</code>...
-			</br>Voici quelques projets que je réalise : 
-			</p>
+            <p>
+            J'ai, en dehors de mes études et de mon alternance, plusieurs projets et challenges dans lesquels je me suis lancé.
+            Grâce à ces projets, j'ai pu apprendre à communiquer avec des <surligne>API</surligne>, le <surligne>langage web</surligne>, ainsi qu'à utiliser <surligne>Linux</surligne> et <surligne>Kali Linux</surligne>.
+            <br><br>
+
+            <strong style="color:white;border-bottom: 2px solid #00A97F;">Hack the Box :</strong> HTB est un site sur lequel des machines sont mises en ligne pour apprendre la <surligne>cybersécurité</surligne> côté offensif ou défensif en toute légalité.
+            Cela fait un an que je m'entraîne du côté offensif. Grâce à cela, j'ai pu approfondir les connaissances que je possédais déjà dans le milieu du web.  
+            J'ai également appris les méthodes d'énumération web (<surligne>FUZZING</surligne>), à détecter des vulnérabilités déjà connues (<surligne>CVE</surligne>) et à les exploiter.  
+            J'ai aussi appris à effectuer des <surligne>élévations de privilèges</surligne> grâce aux outils et ressources déjà présents sur la machine "piratée".
+            <br><br>
+
+            <strong style="color:white;border-bottom: 2px solid #00A97F;">Trading bot :</strong> J'ai pour objectif de créer un bot de trading <surligne>crypto</surligne>.  
+            Pour cela, j'utilise l'<surligne>API</surligne> gratuite de <surligne>Binance</surligne> qui me permet de récupérer les données du marché, d'acheter et de vendre.  
+            Je dois donc collecter les données du marché, les analyser et prendre une décision sur ma position.
+
+            Ce projet n'est actuellement pas terminé car la première version que j'ai créée ne fait que perdre de l'argent.  
+            J'ai pu identifier ce problème avant de lancer le projet grâce à une simulation réalisée sur plusieurs mois déjà passés.
+
+            Ce projet m'a familiarisé avec <surligne>l'analyse de données</surligne> et la création d'<surligne>interfaces graphiques</surligne> afin de visualiser rapidement les trades du bot.
+            <br><br>
+
+            <strong style="color:white;border-bottom: 2px solid #00A97F;">Jeux Python :</strong> J'ai commencé à apprendre le langage <surligne>Python</surligne> en réalisant des jeux vidéo avec  
+            la librairie <surligne>PyGame</surligne>. J'ai pu réaliser plusieurs jeux d'aventure en 2D en suivant les vidéos de <a style="color:#b2f233;"href="https://www.youtube.com/@Gravenilvectuto">Graven</a>.  
+            Ces jeux m'ont introduit à la notion de <surligne>classe</surligne> que je maîtrise aujourd'hui.
+            <br><br>
+
+            <strong style="color:white;border-bottom: 2px solid #00A97F;">Arduino :</strong> J'utilise <surligne>Arduino</surligne> très régulièrement car je trouve son fonctionnement très simple à utiliser et à programmer.  
+            Grâce à ces cartes, j'ai pu créer un système de <surligne>verrouillage</surligne> qui se bloque et se débloque grâce au code entré avec des boutons poussoirs.  
+
+            J'ai également, grâce à la carte <surligne>Leonardo</surligne>, répliqué le fonctionnement d'une <surligne>clé Rubber Ducky</surligne>, qui consiste à simuler un clavier et à exécuter rapidement du code sur une machine branchée à l'Arduino.
+
+            Grâce à Arduino, j'ai donc été introduit au langage <surligne>C</surligne> et à la conception de <surligne>montages électroniques</surligne> simples pour répondre à un besoin.
+            </p>
         </div>
     </section>
-	<section class="conteneur_Box_skill">
-		<div class="Box_skill">HTB</div>
-		<div class="Box_skill">Trading BOT</div>
-		<div class="Box_skill">Jeux vidéo</div>
-		<div class="Box_skill">Arduino</div>
-	</section>
+    
+    <section class="conteneur_Box_skill">
+        <div class="Box_skill">
+            <img src="images/HTB.png" class="image_illustrative_dans_box_skill">
+            <h_box_skill>Hack the Box</h_box_skill>
+            <ul>
+                <li>Langages Web</li>
+                <li>Analyse d'un système (<surligne>Nmap</surligne>, <surligne>ffuf</surligne>...)</li>
+                <li>Exploitation de vulnérabilités avec <surligne>Metasploit</surligne></li>
+            <ul>
+        </div>
 
-</body>
+        <div class="Box_skill">
+            <img src="images/Binance.png" class="image_illustrative_dans_box_skill">
+            <h_box_skill>Trading bot</h_box_skill>
+            <ul>
+                <li>Communication avec <surligne>API</surligne></li>
+                <li>Analyse de données</li>
+                <li>Création d'interfaces graphiques</li>
+            </ul>
+        </div>
 
+        <div class="Box_skill">
+            <img src="images/pygame.png" class="image_illustrative_dans_box_skill">
+            <h_box_skill>Jeux Python</h_box_skill>
+            <ul>
+                <li>Maîtrise des classes</li>
+                <li>Gestion des états des éléments en jeu</li>
+                <li>Création d'une <surligne>interface</surligne> de jeu</li>
+            </ul>
+        </div>
+
+        <div class="Box_skill">
+            <img src="images/arduino.jpg" class="image_illustrative_dans_box_skill">
+            <h_box_skill>Arduino</h_box_skill>
+            <ul>
+                <li>Création de montages simples</li>
+                <li>Création de programmes en <surligne>C</surligne></li>
+            </ul>
+        </div>
+    </section>
+	<!-- Fenetre Pop up SOLEM -->     
+	<div id="solemModal" class="modal">         
+		<div class="modal-content">            
+		<span class="close" onclick="closeModal()">&times;</span>                         
+			<div class="modal-header"><h2>Entreprise SOLEM</h2></div>             
+			<div class="modal-body">                
+				<div class="modal-body-top">                    
+				<img src="images/solem.jpg" class="modal-logo" >                    
+				<p>SOLEM est une entreprise française créée en 1984 et basée à Clapiers, près de Montpellier.  
+				Elle est spécialisée dans la conception et la fabrication de solutions électroniques et d'objets connectés (IoT).  
+				L'entreprise développe des technologies permettant de connecter et de piloter à distance différents équipements. 
+				Avec plus de 30 ans d'expérience, SOLEM s'est progressivement positionnée comme un acteur important des solutions IoT destinées aux professionnels.
+				</p>
+			</div>                                  
+			<p>Les trois principales branches d'activité de SOLEM sont :</p>
+			<ol>                     
+				<li>L'irrigation connectée SOLEM conçoit des systèmes intelligents permettant de gérer l'arrosage à distance. Ces solutions sont utilisées dans les espaces verts, 
+				l'agriculture, les terrains de sport ou les jardins. Les produits permettent d'optimiser l'utilisation de l'eau et de programmer l'irrigation via des applications 
+				ou des plateformes connectées.</li>                    
+				<li>La télésurveillance et la téléassistance (telecare) Cette branche développe des dispositifs connectés destinés à la santé et à l'aide aux personnes, notamment les personnes âgées. 
+				Les solutions permettent de surveiller certaines situations à distance et d'envoyer des alertes en cas de problème afin d'améliorer la sécurité et l'autonomie des utilisateurs.</li>                     
+				<li>Les équipements connectés pour piscines SOLEM propose également des solutions IoT pour la gestion des piscines. Ces systèmes permettent de contrôler différents paramètres comme 
+				la filtration, le traitement de l'eau ou la maintenance, souvent via une application mobile.</li>                 
+			</ol>             
+		</div>         
+	</div>     
+</div> 
+<!-- Ce JS est utilisé pour ouvrir et fermer la page SOLEM -->    
+<script>
+// Récupérer la modale
+var modal = document.getElementById("solemModal");
+// Fonction pour ouvrir la modale         
+function openModal() {modal.style.display = "block";}         
+// Fonction pour fermer la modale (via la croix)         
+function closeModal() {modal.style.display = "none";}        
+// Fermer la modale si l'utilisateur clique en dehors de celle-ci         
+window.onclick = function(event) {if (event.target == modal) {modal.style.display = "none";}}     
+</script> 
+</body> 
 </html>

@@ -1,0 +1,6 @@
+padding → espace à l’intérieur de l’élément (entre le contenu et la bordure).
+
+margin → espace à l’extérieur de l’élément (entre l’élément et les autres éléments).
+
+object-fit: cover => permet de fixer une taille une image et qu'elle se débrouille pour afficher ce qui rentre. Affiche dans tout l'espace disponible.
+
