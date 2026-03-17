@@ -297,8 +297,8 @@ h_box_skill{
 /* Le cadre de la photo */
 .projet-photo {
     flex-shrink: 0; 
-    width: 300px;
-    height: 160px;
+    width: 360px;
+    height: 200px;
     border: 3px solid var(--couleur_titre_2); /* Cadre rectangulaire/carré robuste */
     display: flex;
     justify-content: center;
