@@ -27,10 +27,14 @@
 
     <section class="content-section">
         <h2>Qui suis-je ?</h2>
-        <div class="text-content">
+        <div class="text-content" >
             <img class="photo_perso" src="images/image robot.avif" style = "padding-left: 20px;">
             <p>
-                Technicien supérieur en formation en Génie Électrique et Informatique Industrielle à l'IUT de Montpellier, je souhaite me spécialiser dans la <surligne>sécurité informatique</surligne>.
+			Je suis actuellement alternant en tant que technicien en tests industriels, en formation en Génie Électrique et Informatique Industrielle à l'IUT de Montpellier, et je souhaite me spécialiser dans la <surligne>sécurité informatique</surligne>.
+			<br>
+			J’ai toujours été attiré par la <surligne>création de programmes</surligne>, la conception de <surligne>systèmes électroniques</surligne> ainsi que par la <surligne>cybersécurité</surligne>. Après mon baccalauréat <surligne>STI2D</surligne>, j’ai donc choisi de m’orienter vers un <surligne>BUT GEII</surligne> afin d’apprendre à concevoir des systèmes embarqués et à les programmer.  
+			<br>
+			J’arrive aujourd’hui à la fin de mes trois années de <surligne>BUT</surligne> et je souhaite désormais me spécialiser en <surligne>cybersécurité</surligne>, domaine que j’étudie depuis un an en parallèle de ma formation académique.
             </p>
         </div>
     </section>
@@ -39,9 +43,10 @@
         <h2>Mon alternance</h2>
         <div class="text-content">
             <p>
-                Pendant ma formation de trois ans en BUT Génie Électrique et Informatique Industrielle, j'ai effectué deux années en alternance avec l'entreprise Solem en tant que technicien de <surligne>tests industriels</surligne>. J'ai appris à évaluer le fonctionnement d'un nouveau produit et à mettre en place des tests permettant de mettre en valeur ses fonctionnements et ses dysfonctionnements.  
-                Pour améliorer la qualité et la rapidité de mes tests, j'ai développé plusieurs applications en <surligne>Python</surligne>.
-            </p>
+				Pendant ma formation de trois ans en BUT Génie Électrique et Informatique Industrielle, j’ai effectué deux années en alternance au sein de l’entreprise Solem en tant que technicien de <surligne>tests industriels</surligne>. 
+				J’y ai appris à évaluer le fonctionnement de nouveaux produits et à mettre en place des protocoles de test permettant d’identifier leurs performances ainsi que leurs dysfonctionnements.  
+				Afin d’améliorer la qualité et la rapidité de mes tests, j’ai développé plusieurs applications en <surligne>Python</surligne>.
+			</p>
         </div>
     </section>
 
@@ -51,7 +56,7 @@
         <button class="btn" onclick="window.location.href = 'pages/tests.html';">Mes Tests et Compétences</button> 
         <nav class="menu">
             <section class="categorie" style ="margin=50px;">
-                <h3>Mes programmes</h3>
+                <h3>Mes programmes Python</h3>
                 <ul>
                     <li><a href="pages/Lecteur_UART.html">Filtre UART</a></li>
                     <li><a class="last_a" href="pages/ARL.html">ARL</a></li>
@@ -63,9 +68,75 @@
     <section class="content-section">
         <h2>Mes projets académiques</h2>
         <div class="text-content">
-            <p>À venir...</p>
+            <p>
+				Au cours de mes trois années de BUT Génie Électrique et Informatique Industrielle, j’ai réalisé de nombreux projets qui m’ont permis d’acquérir les compétences suivantes :
+				<ul>
+					<li><strong>Concevoir :</strong> créer un système électronique et développer un code permettant d’atteindre des objectifs définis tout en respectant les contraintes imposées.</li>
+					<li><strong>Vérifier :</strong> s’assurer qu’un montage électrique présente un comportement conforme aux prévisions théoriques et qu’un firmware fonctionne comme attendu.</li>
+					<li><strong>Maintenir :</strong> identifier les dysfonctionnements d’un système en fonctionnement et proposer des solutions adaptées.</li>
+				</ul>
+			</p>
         </div>
     </section>
+	<div class="projet-academique-container">
+            
+            <div class="projet-card">
+                <div class="projet-photo">
+                    <img src="images/Capteur_temp.png">
+                </div>
+                <div class="projet-txt">
+                    <h2>Capteur de température</h2>
+                    <p>
+					Ce projet a constitué une excellente introduction à la conception de circuits de test à partir d’un composant imposé, ainsi qu’à l’utilisation des composants STM32.  
+					L’objectif était de concevoir un montage délivrant une tension variable en fonction de la température. Cette tension devait ensuite être mesurée par une carte STM32, puis affichée sur des LEDs et un écran LCD.  
+					<br><br>
+					J’ai appris à concevoir un montage adapté au composant fourni et à conditionner la tension de sortie afin qu’elle soit exploitable par la carte STM32. J’ai également rédigé un rapport de test afin de valider le bon fonctionnement du montage et d’éviter toute erreur de mesure.  
+					Une fois le montage validé, j’ai programmé la carte pour récupérer la tension et l’afficher sur les LEDs puis sur l’écran LCD. J’ai également appris à utiliser le mode <surligne>Debug</surligne> lors du développement.  
+					<br><br>
+					Ce projet m’a permis de développer mes compétences en <surligne>conception</surligne> et en <surligne>vérification</surligne>.
+					</p>
+                </div>
+            </div>
+            
+            <div class="projet-card">
+				<div class="projet-txt">
+					<h2>Dé électronique</h2>
+                    <p>
+					L’objectif de ce projet était de concevoir un dé (modulo 6) uniquement à l’aide de composants électroniques.  
+					Nous avons commencé par réaliser un schéma fonctionnel, puis construit chaque partie du montage en respectant les contraintes imposées. Nous avons généré un signal périodique permettant d’incrémenter un compteur modulo 6, activé brièvement lors de l’appui sur un bouton.  
+					Le compteur transmet ensuite sa valeur à un module chargé de l’afficher sur un afficheur 7 segments.  
+					<br><br>
+					Dans un second temps, une évaluation consistait à diagnostiquer une panne sur une carte similaire comportant un défaut. J’ai identifié le composant défectueux en analysant le comportement du système, en vérifiant les signaux à l’oscilloscope et en retraçant les étapes du fonctionnement.  
+					<br><br>
+					Ce projet m’a permis de valider les compétences <surligne>concevoir</surligne>, <surligne>vérifier</surligne> et <surligne>maintenir</surligne>.
+					</p>
+                </div>
+                <div class="projet-photo">
+                    <img src="images/dé_électronique.jpg" alt="Photo projet 2">
+                </div>
+                
+            </div>
+
+            <div class="projet-card">
+                <div class="projet-photo">
+                    <img src="images/PCB_capteur.png" alt="Photo projet 3">
+                </div>
+                <div class="projet-txt">
+					<h2>Capteur de connecté</h2>
+                    <p>L'objectif de ce projet a été de concevoir un montage électrique et un code fonctionnent en <surligne>temp réel</surligne> pour relever des informations sur l'environnement, et les communiquer en radio à un récepteur.
+					Encore une fois nous avons du concevoir le hardware de la carte puis coder le fonctionnement de la carte en <surligne>C</surligne>. La grande différence avec mes anciens projets a été la rédaction du code en <surligne>temp réel</surligne>.
+					Cela permet de traiter plusieurs actions en parrallèle en partageant le temp de fonctionnement sur chaque fonction tout en tenant compte de leur niveau de priorité. La carte relève donc les informations sur son environnement(température, humidité ...)
+					, les chiffre, et les communique en radio. 
+					<br><br>Une fois la carte codé et prête, nous avons pu dévellopper le programme qui va récuper les trames radio, et les déchiffrer pour les afficher. Le programme reçoit les trames radio via le port USB grâce à un bridge. Dans un premier temp il vérifie si la trame est chiffré ou non, 
+					si oui il la déchriffre et vérifie ensuite si elle est conforme.Les données sont ensuite extraites de la partie payload de la trame, et enregistrés dans une <surligne>base de donné</surligne> en <surligne>SQL</surligne>. 
+					<br>Cette partie a été faite en <surligne>C++</surligne> et est trouvable sur mon <a style="color:#b2f233;"href="https://github.com/Akira07210/IUT_ESE/blob/main/serialportreader.cpp">Github</a>. 
+					<br><br>Ce projet m'a permit d'approfondir mes connaissances sur les méthodes de <surligne>chiffrement</surligne>, de réutiliser les communications <surligne>SPI</surligne>, et d'apprendre à communiquer en radio via un <surligne>NRF</surligne>.
+					J'ai également pu réutiliser mes compétences <surligne>concevoir</surligne> et <surligne>vérifier</surligne>.
+					</p>
+                </div>
+            </div>
+
+        </div>
 
     <section class="content-section">
         <h2>Mes projets personnels</h2>
@@ -121,7 +192,7 @@
             <img src="images/Binance.png" class="image_illustrative_dans_box_skill">
             <h_box_skill>Trading bot</h_box_skill>
             <ul>
-                <li>Communication avec <surligne>API</surligne></li>
+                <li>Communication avec les <surligne>API</surligne></li>
                 <li>Analyse de données</li>
                 <li>Création d'interfaces graphiques</li>
             </ul>
@@ -146,6 +217,7 @@
             </ul>
         </div>
     </section>
+	
 	<!-- Fenetre Pop up SOLEM -->     
 	<div id="solemModal" class="modal">         
 		<div class="modal-content">            

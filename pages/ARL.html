@@ -8,79 +8,110 @@
 	<link rel="stylesheet" href="../styles/styles_ATL.css">
 	<link rel="stylesheet" href="../styles/styles_bp_commun.css">
 </head>
+
 <body>
-<a href="../index.html" style ="text-decoration: none;color: inherit;">
-	<div class = "button_back_bottom" id="bp_r_b">Retour Menu</div>
-	<div class = "button_front_bottom" id="bp_r_v">
-	    <svg
-      viewBox="0 0 1024 1024"
-      height="25px"
-      width="25px"
-	  
-    >
-      <path
-        d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-        fill="#000000"
-      ></path>
-      <path
-        d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-        fill="#000000"
-      ></path>
-    </svg>
+
+<a href="../index.html" style="text-decoration: none; color: inherit;">
+	<div class="button_back_bottom" id="bp_r_b">Retour Menu</div>
+	<div class="button_front_bottom" id="bp_r_v">
+	    <svg viewBox="0 0 1024 1024" height="25px" width="25px">
+	      <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z" fill="#000000"></path>
+	      <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z" fill="#000000"></path>
+	    </svg>
 	</div>
-	</a>
-	<a href="https://github.com/Akira07210" >
-	<img src="../images/github_image.png" alt="Logo du site" class="logo-fixe"></a>
-    <header>
-        <h1>Automatique Request Luna</h1>
-    </header>
-    <div class="container">
-        <div class="intro">
-            <strong>Objectif de l'application :</strong> Certains des appareils que j'ai pu tester sont supervisés par serveur web. Mon objectif a donc été d'automatiser les actions des appareils en passant par la plateforme et de traiter les résultats remontés.
-			<p align="center" style ="font-size:2rem;">⚠️</p>
-			<p align="center">Pour des raisons de secret professionnel, le code source et le fonctionnement exacte de ce programme ne seront pas partagé.<br> <strong>Merci de votre compréhention.</strong></p>
-		</div>
-		
-        <h2> 1. Fonctionnement Général</h2>
-        <div class="intro">
-            <p>Mon application (nommée <strong>ARL</strong>) va s'authentifier sur le serveur pour ensuite monitorer les appareils voulu. Une fois que les produits en tests ont fini d'exécuter les taches demandés, l'ARL se reconnecte à la plateforme pour récupérer les résultats. Les résultats sont ensuite <strong>triés</strong>, puis <strong>stocké de manère claire</strong> dans un fichier log pour que le testeur puisse facilement voir les informations importantes.</p>
-        </div>
+</a>
 
-        <h2>2. Découpage et Analyse des Composants</h2>
+<a href="https://github.com/Akira07210">
+	<img src="../images/github_image.png" alt="Logo du site" class="logo-fixe">
+</a>
+
+<header>
+    <h1>Automated Request Luna</h1>
+</header>
+
+<div class="container">
+
+    <div class="intro">
+        <strong>Objectif de l'application :</strong>  
+        Certains des appareils que j’ai testés sont supervisés via une plateforme web. Mon objectif a donc été d’automatiser les actions sur ces appareils via cette plateforme, puis de traiter les résultats remontés.
 		
-		<button class="accordion">A. Paramètres</button>
-        <div class="panel">
-            <p>A l'aide de l'interface graphique, l'utilisateur peut en toute simplicité renseigner les identifiants des produits à tester. Ces identifiants sont stockés, et seront réutilisés dans les requêtes avec le serveur.</p> 
-		</div>
+		<p align="center" style="font-size:2rem;">⚠️</p>
+		<p align="center">
+		Pour des raisons de confidentialité, le code source et le fonctionnement exact de ce programme ne sont pas partagés.<br>
+		<strong>Merci de votre compréhension.</strong>
+		</p>
+	</div>
+
+    <h2>1. Fonctionnement général</h2>
+
+    <div class="intro">
+        <p>
+        Mon application (nommée <strong>ARL</strong>) s’authentifie sur le serveur afin de superviser les appareils souhaités.  
+        Une fois que les produits en test ont terminé les tâches demandées, l’ARL se reconnecte à la plateforme pour récupérer les résultats.  
+
+        Les données sont ensuite <strong>triées</strong> puis <strong>stockées de manière claire</strong> dans un fichier log afin que le testeur puisse identifier rapidement les informations importantes.
+        </p>
+    </div>
+
+    <h2>2. Découpage et analyse des composants</h2>
+
+	<button class="accordion">A. Paramètres</button>
+    <div class="panel">
+        <p>
+        Grâce à l’interface graphique, l’utilisateur peut facilement renseigner les identifiants des produits à tester.  
+        Ces identifiants sont enregistrés et réutilisés dans les requêtes envoyées au serveur.
+        </p> 
+	</div>
         
-        <button class="accordion">B. Connexions server</button>
-        <div class="panel">
-            <p>Pour communiquer avec la plateforme web j'utilise les biliothèques <code>BeautifulSoup</code> pour analyser simplement les réponses web et <code>request</code> pour communiquer avec le serveur.</p>
-			<p>Pour chaque requête faite, l'ARL prend en compte les réponses http des requêtes, car le serveur n'est pas toujours joignable. Si une requête n'obtient pas un code 200 ou 201 alors l'ARL le renseigne dans les logs et attend avant de retenter sa requête.</p>
-		</div>
+    <button class="accordion">B. Connexion serveur</button>
+    <div class="panel">
+        <p>
+        Pour communiquer avec la plateforme web, j’utilise les bibliothèques <code>BeautifulSoup</code> pour analyser les réponses HTML et <code>requests</code> pour envoyer les requêtes au serveur.
+        </p>
 
-        <button class="accordion">C. Analyse des réponses et stockage</button>
-        <div class="panel">
-			<p>Après avoir attendu un délai fixé par l'utilisateur pour laissé le temps au produit d'effectuer sa tache, l'ARL refait une connexion plateforme pour récupérer les résultats de la demande. Seul les informations en rapport avec le test sont récoltés.</p>
-			<p>Les informations les plus importantes comme le résultat de la requête sont directement communiqués avec l'interface graphique. Cela permet de voir rapidement l'état du test.<br>
-			Toutes les informations en rapport avec le test sont enregistrés dans un fichier <code>log.csv</code>. Si un doute est émit sur les résultats obtenu, il est toujours possible d'aller vérifier le résultat manuellement avec l'id de la requête stocké dans les logs(gestion d'erreur).</p>
-			<p> Pour garentir un fonctionnement continue du programme l'utilisation de la méthode <code>try{} exept{}</code> est très régulière. Elle permet de traiter les cas d'erreur et ne pas intérromptre le programme. Les cas erreur sont également inscrits dans l'interface graphique.</p>
-		</div>
+		<p>
+        Pour chaque requête, l’ARL vérifie le code de réponse HTTP, car le serveur n’est pas toujours joignable.  
+        Si une requête ne retourne pas un code 200 ou 201, l’erreur est enregistrée dans les logs et une nouvelle tentative est effectuée après un délai.
+        </p>
+	</div>
 
-		<section class="anim">
+    <button class="accordion">C. Analyse des réponses et stockage</button>
+    <div class="panel">
+		<p>
+        Après un délai défini par l’utilisateur (afin de laisser le temps au produit d’exécuter la tâche), l’ARL se reconnecte à la plateforme pour récupérer les résultats.  
+        Seules les informations pertinentes pour le test sont conservées.
+        </p>
+
+		<p>
+        Les informations principales (comme le résultat de la requête) sont affichées directement dans l’interface graphique, permettant une lecture rapide de l’état du test.  
+        L’ensemble des données est également enregistré dans un fichier <code>log.csv</code>.
+        </p>
+
+		<p>
+        En cas de doute, il est possible de vérifier manuellement les résultats grâce à l’identifiant de la requête enregistré dans les logs (gestion des erreurs).
+        </p>
+
+		<p>
+        Afin de garantir un fonctionnement continu du programme, l’utilisation des blocs <code>try { } except { }</code> est fréquente.  
+        Ils permettent de gérer les erreurs sans interrompre l’exécution du programme.  
+        Les erreurs sont également affichées dans l’interface graphique.
+        </p>
+	</div>
+
+	<section class="anim">
 		<div class="container_anim">
 			<h2>Animation du fonctionnement</h2>
 			
 			<div class="animation-area">
 				<div class="node ATL">💻 ARL</div>
 				<div class="node PATV">🖥️ Plateforme</div>
-				<div class="node LDD" id = "animation_scan">🖥️ Produit</div>
+				<div class="node LDD" id="animation_scan">🖥️ Produit</div>
 
-				<div class="arrow arrow_creation_scan" id="arrow_creation_scan">Requête de test➡️</div>
-				<div class="arrow arrow_reveil_LDD" id="arrow_reveil_LDD">Transmission de la commande➡️</div>
-				<div class="arrow arrow_remonte_scan" id="arrow_remonte_scan">⬅️Résultats </div>
-				<div class="arrow arrow_analyse_scan" id="arrow_analyse_scan">Récupération du résultat➡️</div>
-				<img class = "image_parametre" src="../images/logo paramètre.png" id = "image_parametre"/>
+				<div class="arrow arrow_creation_scan" id="arrow_creation_scan">Requête de test ➡️</div>
+				<div class="arrow arrow_reveil_LDD" id="arrow_reveil_LDD">Transmission de la commande ➡️</div>
+				<div class="arrow arrow_remonte_scan" id="arrow_remonte_scan">⬅️ Résultats</div>
+				<div class="arrow arrow_analyse_scan" id="arrow_analyse_scan">Récupération du résultat ➡️</div>
+				<img class="image_parametre" src="../images/logo paramètre.png" id="image_parametre"/>
 			</div>
 
 			<p class="description" id="stepDesc">Étape 0 : Prêt. Cliquez sur la flèche de droite pour commencer.</p>
@@ -92,17 +123,22 @@
 		</div>
 	</section>
 
+    <h2>3. Aperçu en fonctionnement</h2>
 
-        <h2>3. Appercue en fonctionnement</h2>
-            <div class="card warning">
-                <h3>Illustration sur un détecteur de présence</h3>
-				<p>L'interface graphique permet de donner les paramètres répidement, et la fenêtre de texte permet de rapidement voir les résultats des demandes.</p>
-				<img src="../images/Illustration ARL.png"  style="width: 400px;border-radius: 8px;margin-left: 230px;">
-			    </video>
-            </div>	   
+    <div class="card warning">
+        <h3>Illustration sur un détecteur de présence</h3>
+		<p>
+        L’interface graphique permet de renseigner rapidement les paramètres, tandis que la zone de texte permet de visualiser rapidement les résultats des requêtes.
+        </p>
+
+		<img src="../images/Illustration ARL.png" style="width: 400px; border-radius: 8px; margin-left: 230px;">
+    </div>
+
+</div>
+
 <script src="../js/java_programmes.js"></script>
 <script src="../js/java_ATL.js"></script>
 <script src="../js/java_animation_bp_retour.js"></script>
-</body>
 
+</body>
 </html>

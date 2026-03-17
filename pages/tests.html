@@ -7,92 +7,122 @@
 	<link rel="stylesheet" href="../styles/styles_bp_commun.css">
 </head>
 <body>
-<a href="../index.html" style ="text-decoration: none;color: inherit;">
-	<div class = "button_back_bottom" id="bp_r_b">Retour Menu</div>
-	<div class = "button_front_bottom" id="bp_r_v">
-	    <svg
-      viewBox="0 0 1024 1024"
-      height="25px"
-      width="25px"
-	  
-    >
-      <path
-        d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-        fill="#000000"
-      ></path>
-      <path
-        d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-        fill="#000000"
-      ></path>
-    </svg>
+
+<a href="../index.html" style="text-decoration: none; color: inherit;">
+	<div class="button_back_bottom" id="bp_r_b">Retour Menu</div>
+	<div class="button_front_bottom" id="bp_r_v">
+	    <svg viewBox="0 0 1024 1024" height="25px" width="25px">
+	      <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z" fill="#000000"></path>
+	      <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z" fill="#000000"></path>
+	    </svg>
 	</div>
-	</a>
-	
-	
-<a href="https://github.com/Akira07210" >
-<img src="../images/github_image.png" alt="Logo du site" class="logo-fixe"></a>
+</a>
+
+<a href="https://github.com/Akira07210">
+	<img src="../images/github_image.png" alt="Logo du site" class="logo-fixe">
+</a>
+
 <header>
-	<h1>Qualification Electrique et Fonctionnelle</h1>
+	<h1>Qualification Électrique et Fonctionnelle</h1>
 </header>
+
 <div class="container_tests">
+
 	<div class="case_text_tests">
-	<img class="fit-picture" src="../images/tests_electrique.png" style= "position: relative;top=0; width: 100%;" />
-	<h2 style="border: none;">TESTS ELECTRIQUES</h2>
-	<p>Les tests éléctriques consistent à vérifier le fonctionnement du montage électrique d'un système.
-		Cela permet de s'assurer que les montages soient en capacité de réaliser leurs taches. 
+		<img class="fit-picture" src="../images/tests_electrique.png" style="position: relative; top: 0; width: 100%;" />
+		<h2 style="border: none;">TESTS ÉLECTRIQUES</h2>
+
+		<p>
+		Les tests électriques consistent à vérifier le fonctionnement du montage électrique d’un système.  
+		Cela permet de s’assurer que les montages sont capables de réaliser les tâches attendues.  
+
 		<br><br>
-		<strong>Etude du montage : </strong>
-		<br>Il est important avant de tester un montage de comprendre son fonctionnement.Pour cela, 
-		    je commence par découper le montage pour chaque fonction électrique(créer une tension d'alim, protéger contre les inversions...).
-			Une fois cela fait, je vais étudier les caractéristiques des composants du montage grâce à leur datasheet
-			et les comparer avec les contraintes qu'ils subissent. Il est déjà possible seuelement avec cette étude de trouver des incohérences sur les choix des composants ou du montage.  
+		<strong>Étude du montage :</strong>
+		<br>
+		Avant de tester un montage, il est essentiel de comprendre son fonctionnement.  
+		Pour cela, je commence par découper le montage en différentes fonctions électriques (création d’une tension d’alimentation, protection contre les inversions, etc.).  
+		J’étudie ensuite les caractéristiques des composants à l’aide de leurs datasheets et je les compare aux contraintes qu’ils subissent.  
+		Cette analyse permet déjà d’identifier d’éventuelles incohérences dans le choix des composants ou dans la conception du montage.
+
 		<br><br>
-		<strong>Vérification de son fonctionnement : </strong>
-		<br>Pour vérifier le fonctionnement de mon montage, je vais utiliser le produit, et le placer dans chacun de ses modes de fonctionnement tout en analysant
-		    les tensions et courant clée de mon montage comme par exemple les tensions d'alimentations et je les compare à celles que j'attend avec mon étude théorique.
-			<br>Et comme les composants peuvent avoir un comportement différent en fonction de la température, je repasse par ces mêmes modes de fonctionnement à des
-			températures significativement différentes. Les tensions doivent être relativement similaire.
+		<strong>Vérification du fonctionnement :</strong>
+		<br>
+		Pour vérifier le fonctionnement du montage, j’utilise le produit dans chacun de ses modes tout en analysant les tensions et courants clés (par exemple les tensions d’alimentation).  
+		Je compare ensuite ces mesures aux valeurs attendues issues de mon étude théorique.  
+
+		<br>
+		Comme le comportement des composants peut varier avec la température, je répète ces tests dans différentes conditions thermiques.  
+		Les valeurs mesurées doivent rester cohérentes.
+
 		<br><br>
-		<strong>Consommation du produit : </strong>
-		<br>Pendant la phase de vérification du fonctionnement du montage, je relève la consommation de courant du produit. Cela me permet de détecter rapidement lorsqu'un composant se met en fonctionnement
-		et de vérifier si cette consommation est cohérente et si son déclenchement est au bon moment. 
-		<br>En observant la consommation totale du produit, je peux également faire une estimation de la durée de vie du produit en relenvant ses consommation et en les utilisant avec un profil d'utilisateur.		
-	</p>
+		<strong>Consommation du produit :</strong>
+		<br>
+		Pendant les tests, je mesure également la consommation de courant du produit.  
+		Cela me permet de détecter rapidement l’activation de certains composants et de vérifier que leur comportement est cohérent.  
+
+		<br>
+		L’analyse de la consommation globale me permet aussi d’estimer la durée de vie du produit en fonction d’un profil d’utilisation.
+		</p>
 	</div>
+
 	<div class="case_text_tests">
-	<img class="fit-picture" src="../images/Lunas.jpeg" style= "position: relative;top=0; width: 100%;" />
-	<h2 style="border: none;">TESTS FONCTIONNEL</h2>
-	<p>Les tests fonctionnels consistent à vérifier que le produit remplit bien les fonctionnalités attendues par l'utilisateur et respecte les spécifications. Cela permet de s'assurer que chaque fonction réalise 
-	la tâche prévue, dans les bons scénarios et conditions d'utilisation. 
-	<br><br>
-	<strong>Étude des fonctionnalités :</strong> 
-	<br>Avant de commencer à tester le produit, je vais commencer par réfléchirsur la manière dont est faite le code du produit. Travail en boite noir (sans le code source du produit), je ne peut que supposer sur la manière dont le produit a été codé. 
-	Je peux cependant classer les actions possible du produit par ordre de priorité pour l'utilisateur et lister les ressources qu'elle est sencé utiliser. 
-	Grâce à cela je peux potentiellement trouver des cas de conflit de ressource ou d'autres cas ou les ressources ne sont pas actives. Je liste ensuite ces potentiels cas de dysfonctionnement.
-	<br><br>
-	<strong>Vérification du comportement :</strong>
-	<br>Avant de tester la liste des potentiels cas de dysfonctionnement que j'ai crée dans la partie précédente, je vais tester si chacun des mode fonctionne normalement et dans un cas d'utilisation simple. 
-	Si le fonctionnement est le bon sur des cas d'utilisation simple, je vais pouvoir commencer à combiner les modes et tester les cas de ma liste.
-	<br><br> <strong>Cas de dysfonctionnement :</strong> 
-	<br>Dans un cas de dysfonctionnement, je rédige un rapport complet avec la version du produit, la manipulation, et les conditions de tests. Cela permet aux lecteurs de directement comprendre ou se situe le problème et comment potentiellement le résoudre.
-		Lorsqu'un bug arrive de manière inconnu ou intracable, je relance un maximum de manipulations en parallèle dans différents environnements et différentes manipulations ou identifier le facteur déclencheur.
-		<br>Certains de mes outils m'ont également permits de mettre en évidence des dysfonctionnement comme l'<code><a href="ARL.html">ARL<a></code> qui a montré que certains produits pouvaient arrêter leurs communications radio sans que cela ne soit demandé.
-		Il a également servit à trouver des taux de faux positif anormaux.
+		<img class="fit-picture" src="../images/Lunas.jpeg" style="position: relative; top: 0; width: 100%;" />
+		<h2 style="border: none;">TESTS FONCTIONNELS</h2>
+
+		<p>
+		Les tests fonctionnels consistent à vérifier que le produit répond correctement aux fonctionnalités attendues par l’utilisateur et respecte les spécifications.  
+		Cela permet de s’assurer que chaque fonction réalise la tâche prévue dans les bonnes conditions d’utilisation.
+
+		<br><br>
+		<strong>Étude des fonctionnalités :</strong>
+		<br>
+		Avant de commencer les tests, j’analyse la manière dont le produit est susceptible de fonctionner.  
+		Travaillant en boîte noire (sans accès au code source), je ne peux qu’émettre des hypothèses sur son fonctionnement interne.  
+
+		<br>
+		Je classe les différentes actions possibles par ordre de priorité pour l’utilisateur et j’identifie les ressources utilisées.  
+		Cela me permet de détecter d’éventuels conflits de ressources ou des cas où certaines ressources ne seraient pas correctement utilisées.  
+		J’établis ensuite une liste de scénarios potentiels de dysfonctionnement.
+
+		<br><br>
+		<strong>Vérification du comportement :</strong>
+		<br>
+		Je commence par tester chaque mode individuellement dans des conditions simples afin de valider son fonctionnement de base.  
+		Une fois ces tests validés, je combine les différents modes pour tester les scénarios plus complexes identifiés précédemment.
+
+		<br><br>
+		<strong>Cas de dysfonctionnement :</strong>
+		<br>
+		Lorsqu’un dysfonctionnement est détecté, je rédige un rapport détaillé précisant la version du produit, les manipulations effectuées et les conditions de test.  
+		Cela permet de localiser rapidement le problème et d’aider à sa résolution.  
+
+		<br>
+		Lorsqu’un bug est difficile à reproduire, je multiplie les tests en variant les environnements et les manipulations afin d’identifier le facteur déclencheur.  
+
+		<br>
+		Certains de mes outils m’ont également permis de mettre en évidence des anomalies, comme l’outil 
+		<code><a href="ARL.html">ARL</a></code>, qui a révélé que certains produits pouvaient interrompre leurs communications radio sans action de l’utilisateur.  
+		Il a également permis de détecter des taux de faux positifs anormaux.
+		</p>
 	</div>
+
 	<div class="case_text_tests">
-	<h2 style="border: none;">COMPETENCES ACQUISES</h2>
-	<p>Après deux ans de qualification, j'ai pu acquérir les compétences suivantes : 
-	<ul>
-	  <li>L'analyse fonctionnel et électrique d'un produit.</li>
-	  <li>La création de tests et applications de tests.</li>
-	  <li>La rédaction clair et précise de rapports.</li>
-	  <li>L'analyse et retraçage d'évenements à travers les logs plateforme et traces du produit.</li>
-	  
-	</ul>
-		
-	</p>
-	<div>
+		<h2 style="border: none;">COMPÉTENCES ACQUISES</h2>
+
+		<p>
+		Après deux années en qualification, j’ai acquis les compétences suivantes :
+		<ul>
+			<li>Analyse fonctionnelle et électrique d’un produit</li>
+			<li>Création de tests et d’applications de test</li>
+			<li>Rédaction claire et précise de rapports</li>
+			<li>Analyse et traçage d’événements à partir des logs plateforme et des traces produit</li>
+		</ul>
+		</p>
+	</div>
+
 </div>
+
 <script src="../js/java_animation_bp_retour.js"></script>
+
 </body>
 </html>
