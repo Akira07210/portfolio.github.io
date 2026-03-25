@@ -109,8 +109,7 @@ h2 {
 .photo_perso {
   float: left;
   margin-right: 20px;
-  width: 150px;
-  /* border-radius: 8px; */
+  width: 200px;
 }
 
 .text-content::after {
