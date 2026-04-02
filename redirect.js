@@ -1,4 +1,4 @@
-(function () {
+(async function () {
     if (sessionStorage.getItem("doNotTrack") || localStorage.getItem("doNotTrack")) {
         return;
     }
@@ -6,14 +6,19 @@
     var utcoffset = document.currentScript.getAttribute("data-utcoffset");
     var server = document.currentScript.getAttribute("data-server") || "https://t.counter.dev";
 	
-	navigator.sendBeacon(
-        server + "/trackpage",
-        new URLSearchParams({
+	fetch(server + "/log_your_visit", {
+		method: "POST",
+		headers: {
+			'Accept': 'application/json',
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify({
 			page: window.location.pathname,
 			referrer: document.referrer,
 			screen: screen.width + "x" + screen.height
-		}),
-	);
+		})
+	});
+	
 })();
 
     // if (!sessionStorage.getItem("_swa") && !document.referrer.startsWith(location.protocol + "//" + location.host)) {
